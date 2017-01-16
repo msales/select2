@@ -1049,7 +1049,7 @@ S2.define('select2/results',[
       }
 
       self.setClasses();
-      self.highlightFirstItem();
+      // self.highlightFirstItem();
     });
 
     container.on('unselect', function () {
@@ -1058,7 +1058,7 @@ S2.define('select2/results',[
       }
 
       self.setClasses();
-      self.highlightFirstItem();
+      // self.highlightFirstItem();
     });
 
     container.on('open', function () {
@@ -4144,6 +4144,14 @@ S2.define('select2/dropdown/attachBody',[
     var setupResultsEvents = false;
 
     decorated.call(this, container, $container);
+
+    container.on('select', function () {
+        self._positionDropdown();
+    });
+
+    container.on('unselect', function () {
+        self._positionDropdown();
+    });
 
     container.on('open', function () {
       self._showDropdown();
