@@ -1609,9 +1609,11 @@ S2.define('select2/selection/multiple',[
     MultipleSelection.__super__.bind.apply(this, arguments);
 
     this.$selection.on('click', function (evt) {
-      self.trigger('toggle', {
-        originalEvent: evt
-      });
+      if ($(evt.toElement).attr('class') != 'select2-selection__choice__remove') {
+        self.trigger('toggle', {
+          originalEvent: evt
+        });
+      }
     });
 
     this.$selection.on(
