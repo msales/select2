@@ -2057,7 +2057,11 @@ S2.define('select2/selection/search',[
       width = (minimumWidth * 0.75) + 'em';
     }
 
-    this.$search.css('width', width);
+    // this.$search.css('width', width);
+    //
+    // We need this fix for hidding and showing select2 with proper width
+    //
+    this.$search.css('width', '100%');
   };
 
   return Search;
