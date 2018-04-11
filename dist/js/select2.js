@@ -1803,8 +1803,8 @@ S2.define('select2/selection/allowClear',[
         return;
       }
     }
-
     this.$element.val(this.placeholder.id).trigger('change');
+    $(this.$element).val([]);
 
     this.trigger('toggle', {});
   };
